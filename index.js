@@ -11,11 +11,9 @@ const migrations = {
 const migrateFn = migrations[migrate]
 
 if (!migrateFn) {
-  console.error(
-    `\n    Available value of 'migrate':`,
-    Object.keys(migrations),
-    '\n'
-  )
+  console.error(`
+    Available value of 'migrate': ${Object.keys(migrations)}
+  `)
 } else if (
   !migrate ||
   !db ||

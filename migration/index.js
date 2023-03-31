@@ -1,5 +1,3 @@
-import email from './auth-email.js'
-import port from './port.js'
-import deletePartners from './delete-partners.js'
-
-export { email, port, deletePartners }
+export * from './port.js'
+export * from './auth-email.js'
+export * from './delete-partners.js'

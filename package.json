@@ -1,16 +1,16 @@
 {
-	"name": "customer-data-migration",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"start": "node index.js"
-	},
-	"author": "",
-	"license": "ISC",
-	"type": "module",
-	"dependencies": {
-		"minimist": "^1.2.8",
-		"mongodb": "^4.13.0"
-	}
+  "name": "customer-data-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "mongodb": "^4.13.0"
+  }
 }

@@ -33,15 +33,11 @@ export const identity = (mongo_db, mongo_collection, mongo_uri, path) => {
             },
             {
               $set: {
+                "identity.state": doc['state'],
+                "identity.identity_type": doc['identity_type'],
+                "identity.source_type": doc['source_type'],
+                "identity.updated_at": doc['identity_updated_at'],
                 updated_at: doc['updated_at']
-              },
-              $addToSet: {
-                identity: {
-                    state: doc['state'],
-                    identity_type: doc['identity_type'],
-                    source_type: doc['source_type'],
-                    updated_at: doc['identity_updated_at'],
-                }
               }
             },
             function (err, result) {

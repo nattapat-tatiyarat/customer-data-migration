@@ -7,7 +7,8 @@ const migrations = {
   'auth-email': migration.email,
   port: migration.port,
   partners: migration.deletePartners,
-  identity: migration.identity
+  identity: migration.identity,
+  accounts: migration.accounts
 }
 const migrateFn = migrations[migrate]
 

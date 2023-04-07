@@ -6,7 +6,8 @@ const { migrate, db, collection, uri, path } = argv
 const migrations = {
   'auth-email': migration.email,
   port: migration.port,
-  partners: migration.deletePartners
+  partners: migration.deletePartners,
+  identity: migration.identity
 }
 const migrateFn = migrations[migrate]
 

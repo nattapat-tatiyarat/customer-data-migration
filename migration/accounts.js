@@ -29,7 +29,7 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
             name_en: recordsWithoutHeader[i][7] || '',
             surname_en: recordsWithoutHeader[i][8] || '',
             national_id: recordsWithoutHeader[i][9] || '',
-            national_id_expiry_date: recordsWithoutHeader[i][10] || '',
+            national_id_expiry_date: (recordsWithoutHeader[i][10] == "N/A") ? null : recordsWithoutHeader[i][10] || '',
             birthdate: recordsWithoutHeader[i][11] || '',
             email: recordsWithoutHeader[i][12] || '',
             tel: recordsWithoutHeader[i][13] || '',
@@ -111,14 +111,13 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
           let sourceOfIncomeList = doc["sources_of_income_list"].split(",");
           let investmentObj = doc["investment_objective"].split(",");
 
-
           collection.updateOne(
             {
               user_id: doc['user_id'],
             },
             {
               $set: {
-                customer_code: doc['customer_code'],
+                befund_customer_id: doc['customer_code'],
                 customer_type: doc['customer_type'],
                 title: doc['title'],
                 name: doc['name'],

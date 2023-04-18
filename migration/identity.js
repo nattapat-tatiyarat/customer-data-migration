@@ -20,7 +20,7 @@ export const identity = (mongo_db, mongo_collection, mongo_uri, path) => {
         for (let i = 0; i < recordsWithoutHeader.length; i++) {
           let doc = {
             user_id: parseInt(recordsWithoutHeader[i][0]) || 0,
-            state: recordsWithoutHeader[i][1] || 0,
+            state: parseInt(recordsWithoutHeader[i][1]) || 0,
             identity_type: recordsWithoutHeader[i][2] || '',
             source_type: recordsWithoutHeader[i][3] || '',
             identity_updated_at: new Date(recordsWithoutHeader[i][4]) || new Date(),

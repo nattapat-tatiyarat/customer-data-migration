@@ -13,7 +13,7 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
 
       readFile(path, 'utf8', async function (err, data) {
         if (err) throw err
-        const records = data.split('\n').map((line) => line.split(','))
+        const records = data.replace(',000', '+').split('\n').map((line) => line.split(','))
         const recordsWithoutHeader = records.slice(1)
         let updatedDocuments = 0
 
@@ -48,7 +48,7 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
             business_type_other: recordsWithoutHeader[i][26] || '',
             work_place: recordsWithoutHeader[i][27] || '',
             job_title: recordsWithoutHeader[i][28] || '',
-            income: recordsWithoutHeader[i][29] || '',
+            income: recordsWithoutHeader[i][29].replace('+',',000') || '',
             income_sources_country: recordsWithoutHeader[i][30] || '',
             investment_objective: recordsWithoutHeader[i][31] || '',
             id_card_address_house_no: recordsWithoutHeader[i][32] || '',

@@ -109,7 +109,7 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
             updated_at: new Date()
           }
 
-          var sourceOfIncomeList, investmentObj 
+          var sourceOfIncomeList, investmentObj, cuscode
           if (doc["investment_objective"].length > 0) {
             investmentObj = doc["investment_objective"].split(",");
           }
@@ -118,13 +118,16 @@ export const accounts = (mongo_db, mongo_collection, mongo_uri, path) => {
             sourceOfIncomeList = doc["sources_of_income_list"].split(",");
           }
 
+          if (doc["customer_code"].length > 0) {
+            cuscode = "CUS".concat(doc["customer_code"].padStart(5, '0'))
+          }
           collection.updateOne(
             {
               user_id: doc['user_id'],
             },
             {
               $set: {
-                befund_customer_id: doc['customer_code'],
+                befund_customer_id: cuscode,
                 customer_type: doc['customer_type'],
                 title: doc['title'],
                 name: doc['name'],

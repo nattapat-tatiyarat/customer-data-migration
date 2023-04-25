@@ -48,7 +48,7 @@ export const port = (mongo_db, mongo_collection, mongo_uri, path) => {
 
       let chunkSize = 20000
       let totalRows = updateArray.length
-      let n = Math.Ceil(totalRows / chunkSize)
+      let n = Math.ceil(totalRows / chunkSize)
       for (let i = 0; i < n; i++) {
         let start = i * chunkSize
         let end = (i + 1) * chunkSize

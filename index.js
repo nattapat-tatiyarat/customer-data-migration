@@ -8,7 +8,8 @@ const migrations = {
   port: migration.port,
   identity: migration.identity,
   accounts: migration.accounts,
-  'external-id': migration.externalID
+  'external-id': migration.externalID,
+  birthdate: migration.birthdate
 }
 const migrateFn = migrations[migrate]
 

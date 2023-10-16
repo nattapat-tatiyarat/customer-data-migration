@@ -9,7 +9,8 @@ const migrations = {
   identity: migration.identity,
   accounts: migration.accounts,
   'external-id': migration.externalID,
-  birthdate: migration.birthdate
+  birthdate: migration.birthdate,
+  'ever-approved': migration.everApproved
 }
 const migrateFn = migrations[migrate]
 

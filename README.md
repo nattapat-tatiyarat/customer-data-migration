@@ -21,3 +21,7 @@
 ### migrate accounts
 
 `node index.js --migrate accounts --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate ever_approved
+
+`node index.js --migrate ever-approved --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`

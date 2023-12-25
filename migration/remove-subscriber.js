@@ -8,7 +8,7 @@ export const remove_subscriber = (mongo_db, mongo_collection, mongo_uri) => {
       if (err) throw err;
       console.log("Connected successfully to server");
       const collection = client.db(mongo_db).collection(mongo_collection);
-      let data = await collection.find({ wt_status: { $lte: 2 } }).toArray();
+      let data = await collection.find({ wt_status: { $lt: 2 } }).toArray();
       let updatedDocuments = 0;
       let updateArray = [];
       for (let i = 0; i < data.length; i++) {
@@ -18,7 +18,7 @@ export const remove_subscriber = (mongo_db, mongo_collection, mongo_uri) => {
           updateOne: {
             filter: {
               user_id: user_id,
-              wt_status: { $lte: 2 },
+              wt_status: { $lt: 2 },
             },
             update: [
               { $set: { updated_at: updated_at } },

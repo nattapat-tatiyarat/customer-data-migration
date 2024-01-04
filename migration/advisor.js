@@ -34,18 +34,23 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
               filter: {
                 user_id: doc["user_id"],
               },
-              update: {
-                $set: {
-                  "advisor.partner_platform": doc["partner_platform"],
-                  "advisor.type": doc["type"],
-                  "advisor.detailed_type": doc["detailed_type"],
-                  "advisor.license_no": doc["license_no"],
-                  "advisor.name": doc["name"],
-                  "advisor.email": doc["email"],
-                  "advisor.tier": doc["tier"],
-                  updated_at: updated_at,
+              update: [
+                {
+                  $unset: ["advisor"], // Need unset for case advisor is null
                 },
-              },
+                {
+                  $set: {
+                    "advisor.partner_platform": doc["partner_platform"],
+                    "advisor.type": doc["type"],
+                    "advisor.detailed_type": doc["detailed_type"],
+                    "advisor.license_no": doc["license_no"],
+                    "advisor.name": doc["name"],
+                    "advisor.email": doc["email"],
+                    "advisor.tier": doc["tier"],
+                    updated_at: updated_at,
+                  },
+                },
+              ],
             },
           });
         }

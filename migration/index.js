@@ -6,3 +6,4 @@ export * from "./external-id.js";
 export * from "./birthdate.js";
 export * from "./ever_approved.js";
 export * from "./remove-subscriber.js";
+export * from "./advisor.js";

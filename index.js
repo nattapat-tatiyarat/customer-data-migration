@@ -12,6 +12,7 @@ const migrations = {
   birthdate: migration.birthdate,
   "ever-approved": migration.everApproved,
   "remove-subscriber": migration.remove_subscriber,
+  advisor: migration.advisor,
 };
 const migrateFn = migrations[migrate];
 

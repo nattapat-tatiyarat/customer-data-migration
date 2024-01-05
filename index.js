@@ -10,7 +10,10 @@ const migrations = {
   accounts: migration.accounts,
   'external-id': migration.externalID,
   birthdate: migration.birthdate,
-  'ever-approved': migration.everApproved
+  'ever-approved': migration.everApproved,
+  'banks': migration.bankInfo,
+  'open-account-at': migration.openAccAt,
+  'plans': migration.plans,
 }
 const migrateFn = migrations[migrate]
 

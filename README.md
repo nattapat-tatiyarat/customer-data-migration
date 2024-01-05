@@ -25,3 +25,15 @@
 ### migrate ever_approved
 
 `node index.js --migrate ever-approved --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate banks
+
+`node index.js --migrate banks --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate open_account_at
+
+`node index.js --migrate open-account-at --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate plans
+
+`node index.js --migrate plans --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`

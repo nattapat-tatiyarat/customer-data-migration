@@ -37,3 +37,11 @@
 ### migrate plans
 
 `node index.js --migrate plans --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate advisor
+
+`node index.js --migrate advisor --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate remove-subscriber
+
+`node index.js --migrate remove-subscriber --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`

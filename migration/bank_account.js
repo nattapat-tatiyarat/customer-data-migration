@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 import { readFile } from "fs";
 
+// case: ไม่มี -> insert
+// case: มี -> replace ทั้งหมด
 export const bankInfo = (mongo_db, mongo_collection, mongo_uri, path) => {
     MongoClient.connect(mongo_uri, { useNewUrlParser: true }, (err, client) => {
         if (err) throw err;
@@ -50,6 +52,10 @@ export const bankInfo = (mongo_db, mongo_collection, mongo_uri, path) => {
                 });
             }
 
+            const startTime = new Date();
+            let counter = 0;
+
+
             let chunkSize = 20000;
             let totalRows = updateArray.length;
             let n = Math.ceil(totalRows / chunkSize);
@@ -63,12 +69,20 @@ export const bankInfo = (mongo_db, mongo_collection, mongo_uri, path) => {
                     .bulkWrite(updateArray.slice(start, end))
                     .then((res) => {
                         updatedDocuments += res.matchedCount;
-                        console.log(`Updated ${updatedDocuments} records`);
+                        updateArray.slice(start, end).forEach(update => {
+                                counter += 1;
+                                console.log(`Updated user_id: ${update.updateOne.filter.user_id}, Total updated: ${counter}`);
+                            });
                     })
                     .catch((err) => {
                         console.error(err);
                     });
             }
+
+            const endTime = new Date();
+            const timeSpentMs = endTime - startTime;
+            const timeSpentMinutes = timeSpentMs / (1000 * 60); // Convert milliseconds to minutes
+            console.log(`Time spent: ${timeSpentMinutes.toFixed(2)} minutes ,Total matched: ${updatedDocuments}`);
 
             client.close();
         });

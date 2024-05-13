@@ -17,7 +17,8 @@ export const everApproved = (mongo_db, mongo_collection, mongo_uri, path) => {
             for (let i = 0; i < recordsWithoutHeader.length; i++) {
                 let doc = {
                     user_id: parseInt(recordsWithoutHeader[i][0]) || 0,
-                    ever_approved: recordsWithoutHeader[i][1] !== "NULL" ? new Date(recordsWithoutHeader[i][1]) : null,
+                    first_approved_at: recordsWithoutHeader[i][1] !== "NULL" ? new Date(recordsWithoutHeader[i][1]) : null,
+                    latest_approved_at: recordsWithoutHeader[i][2] !== "NULL" ? new Date(recordsWithoutHeader[i][2]) : null,
                     updated_at: new Date()
                 };
 
@@ -29,7 +30,8 @@ export const everApproved = (mongo_db, mongo_collection, mongo_uri, path) => {
                         },
                         update: {
                             $set: {
-                                "account.ever_approved": doc["ever_approved"],
+                                "account.first_approved_at": doc["first_approved_at"],
+                                "account.latest_approved_at": doc["latest_approved_at"],
                                 updated_at: doc["updated_at"],
                             },
                         },

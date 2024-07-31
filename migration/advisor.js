@@ -27,6 +27,7 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
             name: recordsWithoutHeader[i][5] || "",
             email: recordsWithoutHeader[i][6] || "",
             tier: recordsWithoutHeader[i][7] || "",
+            befund_user_id: recordsWithoutHeader[i][8] || "",
           };
           let updated_at = new Date();
           updateArray.push({
@@ -47,6 +48,7 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
                     "advisor.name": doc["name"],
                     "advisor.email": doc["email"],
                     "advisor.tier": doc["tier"],
+                    "advisor.befund_user_id": doc["befund_user_id"],
                     updated_at: updated_at,
                   },
                 },

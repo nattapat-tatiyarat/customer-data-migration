@@ -48,7 +48,7 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
                     "advisor.name": doc["name"],
                     "advisor.email": doc["email"],
                     "advisor.tier": doc["tier"],
-                    "advisor.befund_user_id": doc["befund_user_id"],
+                    "advisor.befund_user_id": Number(doc["befund_user_id"]),
                     updated_at: updated_at,
                   },
                 },

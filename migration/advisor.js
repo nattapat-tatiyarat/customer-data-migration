@@ -20,14 +20,20 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
         for (let i = 0; i < recordsWithoutHeader.length; i++) {
           let doc = {
             user_id: parseInt(recordsWithoutHeader[i][0]) || 0,
-            partner_platform: recordsWithoutHeader[i][1] || "",
+            partner_platform:
+              recordsWithoutHeader[i][1] == "NULL"
+                ? null
+                : recordsWithoutHeader[i][1],
             type: recordsWithoutHeader[i][2] || "",
             detailed_type: recordsWithoutHeader[i][3] || "",
             license_no: recordsWithoutHeader[i][4] || "",
             name: recordsWithoutHeader[i][5] || "",
             email: recordsWithoutHeader[i][6] || "",
-            tier: recordsWithoutHeader[i][7] || "",
-            befund_user_id: recordsWithoutHeader[i][8] || "",
+            tier:
+              recordsWithoutHeader[i][7] == "NULL"
+                ? null
+                : recordsWithoutHeader[i][7],
+            befund_user_id: parseInt(recordsWithoutHeader[i][8]) || 0,
           };
           let updated_at = new Date();
           updateArray.push({
@@ -48,7 +54,7 @@ export const advisor = (mongo_db, mongo_collection, mongo_uri, path) => {
                     "advisor.name": doc["name"],
                     "advisor.email": doc["email"],
                     "advisor.tier": doc["tier"],
-                    "advisor.befund_user_id": Number(doc["befund_user_id"]),
+                    "advisor.befund_user_id": doc["befund_user_id"],
                     updated_at: updated_at,
                   },
                 },

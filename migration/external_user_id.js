@@ -18,7 +18,8 @@ export const externalID = (mongo_db, mongo_collection, mongo_uri, path) => {
       for (let row of recordsWithoutHeader) {
         let user_id = parseInt(row[0]) || 0
         let doc = {
-          external_user_id: row[1] || ''
+          external_user_id: row[1] || '',
+          updated_at: new Date()
         }
         updateArray.push({
           updateOne: {
@@ -26,7 +27,10 @@ export const externalID = (mongo_db, mongo_collection, mongo_uri, path) => {
               user_id: user_id
             },
             update: {
-              $set: doc
+              $set: doc,
+              $unset: {
+                "external_id": ""
+              }
             }
           }
         })

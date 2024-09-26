@@ -18,7 +18,8 @@ export const registeredAt = (mongo_db, mongo_collection, mongo_uri, path) => {
       for (let row of recordsWithoutHeader) {
         let user_id = parseInt(row[0]) || 0
         let doc = {
-          registered_at: new Date(row[1])
+          registered_at: new Date(row[1]),
+          updated_at: new Date()
         }
         updateArray.push({
           updateOne: {

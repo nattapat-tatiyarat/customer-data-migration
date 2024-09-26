@@ -8,7 +8,7 @@ const migrations = {
   port: migration.port,
   identity: migration.identity,
   accounts: migration.accounts,
-  "external-id": migration.externalID,
+  "external-user-id": migration.externalID,
   birthdate: migration.birthdate,
   'ever-approved': migration.everApproved,
   "remove-subscriber": migration.remove_subscriber,
@@ -16,6 +16,7 @@ const migrations = {
   'banks': migration.bankInfo,
   'open-account-at': migration.openAccAt,
   'plans': migration.plans,
+  'registered-at': migration.registeredAt,
 }
 const migrateFn = migrations[migrate]
 

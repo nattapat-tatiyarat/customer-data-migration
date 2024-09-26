@@ -1,5 +1,0 @@
-user_id,agent_account_id,account_type,plan_slot,plan_id,created_date,plan_type,goal_type,plan_name,risk_level,pra_status,order_no,is_hide
-9990001,888181000014,omnibus,1,34053,2019-12-17 00:00:00,goal-based,piggybank,Piggybank66,6,NULL,1,0
-9990001,888181000017,omnibus,2,34054,2019-11-20 00:00:00,guruport-rnn,guruport-rnn,RUNNING for Growth by นายแว่นลงทุน,100002,NULL,2,0
-9990002,888181000019,omnibus,1,34055,2019-12-17 00:00:00,goal-based,piggybank,Piggybank66,6,NULL,1,0
-9990002,888181000020,omnibus,2,34056,2019-11-20 00:00:00,guruport-rnn,guruport-rnn,RUNNING for Growth by นายแว่นลงทุน,100002,NULL,2,0

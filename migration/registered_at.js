@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 import { readFile } from 'fs'
 
-export const externalID = (mongo_db, mongo_collection, mongo_uri, path) => {
+export const registeredAt = (mongo_db, mongo_collection, mongo_uri, path) => {
   MongoClient.connect(mongo_uri, { useNewUrlParser: true }, (err, client) => {
     if (err) throw err
     console.log('Connected successfully to server')
@@ -18,7 +18,7 @@ export const externalID = (mongo_db, mongo_collection, mongo_uri, path) => {
       for (let row of recordsWithoutHeader) {
         let user_id = parseInt(row[0]) || 0
         let doc = {
-          external_id: row[1] || ''
+          registered_at: new Date(row[1])
         }
         updateArray.push({
           updateOne: {

@@ -45,3 +45,11 @@
 ### migrate remove-subscriber
 
 `node index.js --migrate remove-subscriber --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`
+
+### migrate external_user_id
+
+`node index.js --migrate external-user-id --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`
+
+### migrate registered_at
+
+`node index.js --migrate registered-at --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`

@@ -53,3 +53,7 @@
 ### migrate registered_at
 
 `node index.js --migrate registered-at --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`
+
+### migrate bank_is_main
+
+`node index.js --migrate bank-is-main --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`

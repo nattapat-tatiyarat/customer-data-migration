@@ -5,9 +5,10 @@ export * from './accounts.js'
 export * from './external_user_id.js'
 export * from './birthdate.js'
 export * from './ever_approved.js'
-export * from "./remove-subscriber.js"
-export * from "./advisor.js"
+export * from './remove-subscriber.js'
+export * from './advisor.js'
 export * from './bank_account.js'
 export * from './open_account_at.js'
 export * from './plans.js'
 export * from './registered_at.js'
+export * from './bank_is_main.js'

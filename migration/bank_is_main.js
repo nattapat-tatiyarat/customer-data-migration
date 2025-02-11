@@ -63,7 +63,7 @@ export const bankIsMain = (mongo_db, mongo_collection, mongo_uri, path) => {
         }
 
         if (row[11] == 'APPROVED') {
-          doc2['approved_at'] = row[12].replaceAll('"', '') || ''
+          doc2['approved_at'] = new Date(row[12].replaceAll('"', '')) || null
         }
 
         let updated_at = new Date()

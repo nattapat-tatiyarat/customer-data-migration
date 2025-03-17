@@ -57,3 +57,7 @@
 ### migrate bank_is_main
 
 `node index.js --migrate bank-is-main --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`
+
+### migrate robo advisor
+
+`node index.js --migrate robo-advisor --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`

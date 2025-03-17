@@ -18,6 +18,7 @@ const migrations = {
   plans: migration.plans,
   'registered-at': migration.registeredAt,
   'bank-is-main': migration.bankIsMain,
+  'robo-advisor': migration.roboAdvisor,
 }
 const migrateFn = migrations[migrate]
 

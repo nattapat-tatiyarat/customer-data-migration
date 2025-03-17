@@ -19,6 +19,7 @@ const migrations = {
   'registered-at': migration.registeredAt,
   'bank-is-main': migration.bankIsMain,
   'robo-advisor': migration.roboAdvisor,
+  'remove-external-user-id-dup': migration.removeExternalUSerIDDup,
 }
 const migrateFn = migrations[migrate]
 

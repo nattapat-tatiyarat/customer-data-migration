@@ -61,3 +61,7 @@
 ### migrate robo advisor
 
 `node index.js --migrate robo-advisor --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`
+
+### migrate external_user_id is duplicated
+
+`node index.js --migrate remove-external-user-id-dup --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI>`

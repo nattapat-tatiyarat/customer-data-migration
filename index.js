@@ -20,6 +20,7 @@ const migrations = {
   'bank-is-main': migration.bankIsMain,
   'robo-advisor': migration.roboAdvisor,
   'remove-external-user-id-dup': migration.removeExternalUSerIDDup,
+  'update-open-account-at': migration.updateOpenAccountAtbyCreatedAt,
 }
 const migrateFn = migrations[migrate]
 

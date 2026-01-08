@@ -21,6 +21,7 @@ const migrations = {
   'robo-advisor': migration.roboAdvisor,
   'remove-external-user-id-dup': migration.removeExternalUSerIDDup,
   'update-open-account-at': migration.updateOpenAccountAtbyCreatedAt,
+  'first-approved-seg-at': migration.updateFirstApprovedSegAt,
 }
 const migrateFn = migrations[migrate]
 

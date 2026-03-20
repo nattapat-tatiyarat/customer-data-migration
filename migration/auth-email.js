@@ -18,17 +18,23 @@ export const email = (mongo_db, mongo_collection, mongo_uri, path) => {
       for (let row of recordsWithoutHeader) {
         let user_id = parseInt(row[0]) || 0
         let doc = {
-          email: row[1].length == 0 ? null : row[1],
+          email: row[1] || '',
+          registered_at: new Date(row[2]),
+          external_user_id: row[3] || '',
           updated_at: new Date()
-        }
+        };
         updateArray.push({
           updateOne: {
             filter: {
               user_id: user_id
             },
             update: {
-              $set: doc
-            }
+              $set: doc,
+              $setOnInsert: {
+                user_id: user_id
+              }
+            },
+            upsert: true
           }
         })
       }

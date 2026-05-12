@@ -69,3 +69,7 @@
 ### migrate first_approved_seg_at
 
 `node index.js --migrate first-approved-seg-at --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`
+
+### migrate approved_source
+
+`node index.js --migrate approved-source --db <MONGO_DB> --collection <MONGO_COLLECTION> --uri <MONGO_URI> --path <PATH_TO_CSV>`

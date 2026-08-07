@@ -16,13 +16,16 @@ export const email = (mongo_db, mongo_collection, mongo_uri, path) => {
       let updateArray = []
 
       for (let row of recordsWithoutHeader) {
+        let external_user_id = (row[3] || '').trim()
         let user_id = parseInt(row[0]) || 0
         let doc = {
           email: row[1] || '',
           registered_at: new Date(row[2]),
-          external_user_id: row[3] || '',
           updated_at: new Date()
         };
+        if (external_user_id !== '') {
+          doc.external_user_id = external_user_id
+        }
         updateArray.push({
           updateOne: {
             filter: {
